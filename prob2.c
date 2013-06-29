@@ -25,9 +25,9 @@
 
  int main(void)
  {
- 	printf("Iterative solution: ");
+ 	printf("Iterative solution:\t ");
  	fibo_iter();
- 	printf("Multplicative solution: ")
+ 	printf("Multplicative solution:\t ");
  	fibo_with_phi();	
  	return 0;
  }
