@@ -1,7 +1,5 @@
 #include <stdio.h>
-#include <math.h>
 
-/** COMPILER NOTE: This program MUST be compiled with the -lm flag **/
 
 /*
  * Project Euler problem 1--Multiples of 3 and 5.  The problem description from 
