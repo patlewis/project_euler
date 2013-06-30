@@ -1,7 +1,7 @@
 CC=gcc
 CFLAGS=-Wall -Werror
 
-all: p1 p2
+all: p1 p2 p3
 
 p1:
 	$(CC) $(CFLAGS) prob1.c -o sol1
