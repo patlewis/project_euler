@@ -1,4 +1,4 @@
-#GNU Octave
+#!/usr/bin/octave
 
 %{
 Project Euler problem 1--Multiples of 3 and 5.  The problem description from 
@@ -32,15 +32,15 @@ total = 0;
 % b is the max number, m is the multiple
 %
 function[retval] = sum(b, m)
-  n = floor(b / m); number of numbers to use
+	n = floor(b / m); %number of numbers to use
 	%{
 	Since we have to account for all numbers being less than b, we have to 
 	massage the numbers a little bit.  We have to use m * int((1+b)/m) to 
 	ensure this condition, otherwise we might end up with numbers greater
 	than b.
 	%}
-  retval = n * m * (1 + n) / 2;
-  return;
+	retval = n * m * (1 + n) / 2;
+	return;
 endfunction
 
 
