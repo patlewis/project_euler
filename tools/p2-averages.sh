@@ -4,7 +4,7 @@ IAVG=0
 MAVG=0
 for i in {1..1000}
 do
-./sol2 | grep "time:" > temp.fle
+../c/sol2 | grep "time:" > temp.fle
 IAVG=$(echo "$IAVG + $(awk '/Iterative/ {print $4}' temp.fle)" | bc)
 MAVG=$(echo "$MAVG + $(awk '/Multiplicative/ {print $4}' temp.fle)" | bc)
 done
