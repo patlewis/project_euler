@@ -20,15 +20,15 @@
  * them to a running sum.
  */
 
- int fibo_iter();
- int fibo_with_phi();
+ int fibo_iter(int);
+ int fibo_with_phi(int);
 
  int main(void)
  {
- 	printf("Iterative solution:\t ");
- 	fibo_iter();
- 	printf("Multplicative solution:\t ");
- 	fibo_with_phi();	
+ 	printf("Iterative solution:\t\t ");
+ 	fibo_iter(4000000);
+ 	printf("Multiplicative solution:\t ");
+ 	fibo_with_phi(4000000);	
  	return 0;
  }
 
@@ -36,15 +36,13 @@
  * The boring, somewhat naive but technically correct solution. It's iterative.
  * I'm a little disappointed in myself.
  */
-int fibo_iter()
+int fibo_iter(int max)
 {
-	// This produces the correct output, but the code in the function below
- 	// might be more interesting.
  	int sum  = 0; 
  	int curr = 2;
  	int prev = 1;
  	int temp;		//only used when setting the next fibonacci number
- 	while(curr <= 4000000)
+ 	while(curr <= max)
  	{
  		//if even, add to sum
  		if(curr % 2 == 0) sum += curr;
@@ -69,13 +67,13 @@ int fibo_iter()
  * calculation. I would have liked to have done it without any branches, but the
  * nature of numerical math made that a little rough.
  */
- int fibo_with_phi()
+ int fibo_with_phi(int max)
  {
  	double phi = (1 + sqrt(5))/2;
  	int num = 2;
  	int sum = 0;
  	double tmp;
- 	while(num <= 4000000)
+ 	while(num <= max)
  	{
  		sum += num;
  		//Because of the nature of decimals, we will be getting a decimal out
