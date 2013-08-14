@@ -9,8 +9,13 @@ Find the largest palindrome made from the product of two 3-digit numbers.
 
 The naive solution is simple: count down from 999 to find the largest palindrome
 as a brute-force technique.
+
+The faster solution is to first compute highest palindromes and them work down 
+from there, as there are fewer palindromes than there are factors.  Once the 
+palindrome is found, possible factors are explored.
 %}
 
+% Setup info so we run as a script and not a function definiution
 printf('Largest Palindrome Product\n')
 printf('==========================\n')
 
@@ -50,7 +55,7 @@ endfunction
 %{
 Computes palindromic numbers using a brute-force technique.
 %}
-function[drome, f1, f2] = palindrome()
+function[drome, f1, f2] = naive_palindrome()
 	drome = 0;
 	f1 = 0;
 	f2 = 0;
@@ -101,7 +106,7 @@ t3 = cputime();
 if((d == r) && (n1 == m1) && (n2 == m2))
 	printf('Largest palindrome from 3-digit factors: %d.\n', d);
 	printf('Factors were %d and %d.\n', n1, n2);
-	printf('"palindrome()" took %f seconds.\n', t2 - t1);
+	printf('"naive_palindrome()" took %f seconds.\n', t2 - t1);
 	printf('"math_palindrome()"" took %f seconds.\n', t3 - t2);
 else
 	printf('The two methods did not agree on a result.\n');
