@@ -89,6 +89,11 @@ function[drome, f1, f2] = math_palindrome()
 						drome = pal * 11; 	% restore the factored out 11
 						f1 = x * 11;		% multiply over the 11
 						f2 = pal/x;
+						%{
+						We don't have to do any more checking to see if we 
+						found the highest palindrome, because it is, due to
+						the way we set up the for loops.
+						%}
 						return;
 					endif
 				endfor
