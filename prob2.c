@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <sys/time.h>
 
 // COMPILER NOTE: The -lm flag must be used during compilation.
 
@@ -20,24 +21,41 @@
  * them to a running sum.
  */
 
- int fibo_iter(int);
- int fibo_with_phi(int);
+ double fibo_iter(int);
+ double fibo_with_phi(int);
 
  int main(void)
  {
- 	printf("Iterative solution:\t\t ");
- 	fibo_iter(4000000);
+  	printf("Iterative solution:\t\t ");
+ 	double t1 = fibo_iter(4000000);
  	printf("Multiplicative solution:\t ");
- 	fibo_with_phi(4000000);	
- 	return 0;
+ 	double t2 = fibo_with_phi(4000000);	
+
+ 	printf("\n\n");
+
+ 	printf("The following times were taken using an adapatation of the     \n");
+ 	printf("\"gettimeofday()\" function in <sys\\time.h>.  The resolution  \n");
+ 	printf("isn't spectacular, but it functions as a rough guide for the   \n");
+ 	printf("execution times of the two functions, and it serves our needs. \n");
+
+	printf("\n");
+
+	printf("Iterative solution time:\t%f\n", t1);
+	printf("Multiplicative solution time:\t%f\n", t2);
+
+	return 0;
  }
 
 /*
  * The boring, somewhat naive but technically correct solution. It's iterative.
  * I'm a little disappointed in myself.
  */
-int fibo_iter(int max)
+double fibo_iter(int max)
 {
+	//start timing
+	struct timeval start, end;
+	gettimeofday(&start, NULL);
+	
  	int sum  = 0; 
  	int curr = 2;
  	int prev = 1;
@@ -50,8 +68,18 @@ int fibo_iter(int max)
  		curr += prev;
  		prev = temp;
  	}
- 	printf("Sum = %d\n", sum);
- 	return 0;
+ 	
+ 	//end timing
+ 	gettimeofday(&end, NULL);
+	long secs, usecs;
+	double mtime;
+	secs = end.tv_sec - start.tv_sec;
+	usecs = end.tv_usec  - start.tv_usec;
+	mtime = secs + ((double) usecs)/1000;
+	
+	printf("Sum = %d\n", sum);
+ 	
+ 	return mtime;
 }
 /*
  * The idea behind this is that the ratio between two numbers in the Fibonacci
@@ -67,8 +95,12 @@ int fibo_iter(int max)
  * calculation. I would have liked to have done it without any branches, but the
  * nature of numerical math made that a little rough.
  */
- int fibo_with_phi(int max)
+ double fibo_with_phi(int max)
  {
+ 	//start timing
+	struct timeval start, end;
+	gettimeofday(&start, NULL);
+
  	double phi = (1 + sqrt(5))/2;
  	int num = 2;
  	int sum = 0;
@@ -85,6 +117,16 @@ int fibo_iter(int max)
  		else num = tmp +1;			//if odd, have to round up
  		
  	}
- 	printf("Sum = %d\n", sum);
-	return 0;
+ 	
+ 	//end timing
+ 	gettimeofday(&end, NULL);
+	long secs, usecs;
+	double mtime;
+	secs = end.tv_sec - start.tv_sec;
+	usecs = end.tv_usec  - start.tv_usec;
+	mtime = secs + ((double) usecs)/1000;
+
+	printf("Sum = %d\n", sum);
+
+ 	return mtime;
  }
