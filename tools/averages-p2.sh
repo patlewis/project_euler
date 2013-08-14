@@ -12,7 +12,7 @@ done
 IAVG=$(echo "scale=6; $IAVG / 1000" | bc)
 MAVG=$(echo "scale=6; $MAVG / 1000" | bc)
 
-echo "Iterative: $IAVG"
-echo "Multi: $MAVG"
+echo "Iterative average:      $IAVG"
+echo "Multiplicative average: $MAVG"
 
 rm temp.fle
