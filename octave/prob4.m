@@ -104,7 +104,7 @@ endfunction
 
 % Now on to the fun part of the script
 t1 = cputime();
-[d, n1, n2] = palindrome();
+[d, n1, n2] = naive_palindrome();
 t2 = cputime();
 [r, m1, m2] = math_palindrome();
 t3 = cputime();
