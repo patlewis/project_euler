@@ -124,7 +124,7 @@ double fibo_iter(int max)
 	double mtime;
 	secs = end.tv_sec - start.tv_sec;
 	usecs = end.tv_usec  - start.tv_usec;
-	mtime = secs + ((double) usecs)/1000;
+	mtime = secs + ((double) usecs)/1000000;
 
 	printf("Sum = %d\n", sum);
 
