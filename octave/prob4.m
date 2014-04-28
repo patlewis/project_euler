@@ -16,6 +16,7 @@ palindrome is found, possible factors are explored.
 %}
 
 % Setup info so we run as a script and not a function definiution
+printf('============================== Problem 4 ==============================\n');
 printf('Largest Palindrome Product\n')
 printf('==========================\n')
 
@@ -112,7 +113,8 @@ if((d == r) && (n1 == m1) && (n2 == m2))
 	printf('Largest palindrome from 3-digit factors: %d.\n', d);
 	printf('Factors were %d and %d.\n', n1, n2);
 	printf('"naive_palindrome()" took %f seconds.\n', t2 - t1);
-	printf('"math_palindrome()"" took %f seconds.\n', t3 - t2);
+	printf('"math_palindrome()" took %f seconds.\n', t3 - t2);
 else
 	printf('The two methods did not agree on a result.\n');
 endif
+printf('=======================================================================\n');

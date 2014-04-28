@@ -47,7 +47,9 @@ endfunction
 % And now the actual code that we'll use to compute stuff
 
 total = sum(999,3) + sum(999,5) - sum(999,15);
+printf('============================== Problem 1 ==============================\n');
 printf('Sum = %d\n', total);
+printf('=======================================================================\n');
 
 
  

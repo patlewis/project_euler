@@ -17,6 +17,7 @@ them to a running sum.
 %}
 
 % "Setup" info so that octave thinks this is a script and not a function file
+printf('============================== Problem 2 ==============================\n');
 printf('\n')
 printf('Fibonacci Sequence Count\n')
 printf('========================\n')
@@ -103,3 +104,4 @@ printf('\n')
 
 printf('Iterative solution time:\t%f\n', t1-t0)
 printf('Multiplicative solution time:\t%f\n', t2-t1)
+printf('=======================================================================\n');

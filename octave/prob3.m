@@ -15,6 +15,7 @@ that factor again.
 %}
 
 % Start with non-function declaration so that this is run as a script
+printf('============================== Problem 3 ==============================\n');
 printf('Greatest prime factor: ');
 
 function[retval] = factors(number)
@@ -39,3 +40,4 @@ t1 = cputime();
 printf('%d\n', factors(600851475143));
 t2 = cputime();
 printf('Time: %f\n', t2-t1);
+printf('=======================================================================\n');
