@@ -26,6 +26,7 @@
 
  int main(void)
  {
+	printf("========== Problem 2 ==========\n");	
   	printf("Iterative solution:\t\t ");
  	double t1 = fibo_iter(4000000);
  	printf("Multiplicative solution:\t ");
@@ -42,6 +43,7 @@
 
 	printf("Iterative solution time:\t%f\n", t1);
 	printf("Multiplicative solution time:\t%f\n", t2);
+	printf("===============================\n");	
 
 	return 0;
  }

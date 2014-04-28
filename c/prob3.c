@@ -31,7 +31,9 @@ int factors(unsigned long);
  	// 	return 0;
  	// }
  	//long arg = atoi(argv[1]);
+ 	printf("========== Problem 3 ==========\n");
  	printf("Greatest Prime Factor: %d\n", factors(600851475143));
+	printf("===============================\n");
  	return 0;
  }
 

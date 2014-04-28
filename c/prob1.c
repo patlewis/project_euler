@@ -32,7 +32,9 @@ int sum(int, int);
  int main(void)
  {
  	int total = sum(999,3) + sum(999,5) - sum(999,15);
+	printf("========== Problem 1 ==========\n");
  	printf("Sum = %d\n", total);
+	printf("===============================\n");
  	return 0;
  }
 

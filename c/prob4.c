@@ -59,17 +59,21 @@ int main(void)
 	//all answers must agree
 	if(ans1[0] == ans2[0])
 	{
+ 		printf("========== Problem 4 ==========\n");
 		printf("Largest palindrome from two 3-digit factors: %d.\n", ans1[0]);
 		//printf("naive_solution factors were %d and %d.\n", ans1[1], ans1[2]);
 		//printf("math_solution factors were %d and %d.\n", ans2[1], ans2[2]);
 		printf("\"naive_palindrome()\" took %f seconds.\n", t1);
 		printf("\"math_palindrome()\" took %f seconds.\n", t2);
+ 		printf("===============================\n");
 	}
 	else
 	{
+ 		printf("========== Problem 4 ==========\n");
 		printf("The two methods did not agree in a result.\n");
 		printf("naive_palindrome gave %d and math_palindrome gave %d.\n", \
 			ans1[0], ans2[0]);
+ 		printf("===============================\n");
 	}
 	return 0;
 }
